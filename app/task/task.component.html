@@ -1,0 +1,55 @@
+
+
+<table border="3" style="align-content: center" width = "900"  height= "600">
+<tr>
+  <td>
+<ol>
+    <div class="leftA" *ngFor="let task of tasks">
+        <img  src= "{{task.imag}}"  width="50" height="50">
+      
+      {{task.toString()}}
+      <a href="#" (click)="task.setSelected(true)" >  (add) </a>
+    </div>
+</ol>
+  </td>
+<td>
+<table border="2" style="align-content: center " width = "400"  height= "400" >
+    <tr>
+      <td > desc </td>
+      <td> Price </td>
+      <td> Count </td>
+      <td> Total Price </td>
+    </tr>
+    
+<tr class="leftA" *ngFor="let task of tasks" >
+  
+    
+      <td  *ngIf="task.selected == true ">
+       {{task.toStringdes()}}
+      </td>
+      <td *ngIf="task.selected == true ">
+          {{task.toStringprice()}}
+      </td >
+      <td *ngIf="task.selected == true ">
+          {{task.toStringNum()}}
+      </td>
+      <td *ngIf="task.selected == true ">
+          {{task.toStringTot()}}
+      </td>
+      
+
+
+   
+</tr>
+ Final Sum: 
+
+<div  *ngFor="let task of tasks"  ng-If="task.selected == true ">
+   
+</div>
+
+
+
+</table>
+</td>
+</tr>
+</table>
